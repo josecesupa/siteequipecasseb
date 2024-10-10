@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="styleinicio.css">
+    <style>
+        body {
+            background-image: url('https://images.pexels.com/photos/1257860/pexels-photo-1257860.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #quadrado {
+            background-color: rgb(48, 22, 40);
+            height: 500px;
+            width: 500px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: rotateY(0deg); 
+            transition: transform 1s ease; 
+            cursor: pointer;
+            perspective: 1000px; 
+        }
+
+        
+        .conteudo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: rotateY(0deg); 
+        }
+
+        .imagem-redonda {
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 5px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="quadrado">
+        <div class="conteudo">
+            <p>Equipe</p>
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocL69qzgkzMZGABBRAjwuTOguxA7BD4lptW1yG4LFNBPsPksiw4=s288-c-no" height="100" width="100" alt="" class="imagem-redonda">
+            <a href="biografia.html">Jose Pereira Gonçalves Neto</a><br>
+            <p>+55 919988774275</p>
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQGbjrGUq58FvQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1727206119962?e=1732752000&v=beta&t=7LXd6OVrjeo-qEkzvbDfZdoFG8TwnEVCsUt0AYf0za4" height="100" width="100" alt="" class="imagem-redonda">
+            <a href="myinfo.html">Yuri Antonio Santos Fernandes</a><br>
+            <p>+55 98888-0411</p>
+        </div>
+    </div>
+
+    <script>
+        let angulo = 0; 
+
+        document.getElementById('quadrado').addEventListener('click', function(event) {
+            
+            const quadrado = event.target.closest('#quadrado');
+            const quadradoRect = quadrado.getBoundingClientRect();
+            const posX = event.clientX - quadradoRect.left; 
+
+          
+            if (posX < quadradoRect.width / 2) {
+                
+                angulo -= 180;
+            } else {
+                
+                angulo += 180;
+            }
+
+            
+            quadrado.style.transform = `rotateY(${angulo}deg)`;
+
+            
+            const conteudo = document.querySelector('.conteudo');
+            conteudo.style.transform = `rotateY(${-angulo}deg)`;
+        });
+    </script>
+</body>
+</html>
+
+
+

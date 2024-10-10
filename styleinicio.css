@@ -1,0 +1,21 @@
+body {
+    background-image: url('https://images.pexels.com/photos/1257860/pexels-photo-1257860.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh;
+    margin: 0;
+    color: white; 
+}
+div{
+    background-color:rgb(48, 22, 40);
+    height: 500px;
+    width: 500px;
+}
+p{
+    color: black;
+}
+.imagem-redonda{
+    border-radius: 50%; 
+
+}

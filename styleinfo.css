@@ -1,0 +1,16 @@
+body {
+    background-image: url(https://starwalk.space/gallery/images/what-is-space/1920x1080.jpg)
+}
+img {
+    border-radius: 50%;
+    border: 5px solid;
+    border-color: black;
+    position: relative;
+    height: 20%;
+    top: 10%;
+    left: 50%;
+}
+p {
+    font-size: large;
+    color: brown;
+}
